@@ -1,0 +1,14 @@
+D:\CSharpProj\JsServer\JsServer\JsServer\bin\Debug\net8.0\JsServer.exe
+D:\CSharpProj\JsServer\JsServer\JsServer\bin\Debug\net8.0\JsServer.deps.json
+D:\CSharpProj\JsServer\JsServer\JsServer\bin\Debug\net8.0\JsServer.runtimeconfig.json
+D:\CSharpProj\JsServer\JsServer\JsServer\bin\Debug\net8.0\JsServer.dll
+D:\CSharpProj\JsServer\JsServer\JsServer\bin\Debug\net8.0\JsServer.pdb
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.AssemblyInfoInputs.cache
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.AssemblyInfo.cs
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.csproj.CoreCompileInputs.cache
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.dll
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\refint\JsServer.dll
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.pdb
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.genruntimeconfig.cache
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\ref\JsServer.dll

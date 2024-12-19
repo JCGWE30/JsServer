@@ -12,3 +12,4 @@ D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\refint\JsServer.dll
 D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.pdb
 D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.genruntimeconfig.cache
 D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\ref\JsServer.dll
+D:\CSharpProj\JsServer\JsServer\JsServer\obj\Debug\net8.0\JsServer.sourcelink.json

@@ -11,7 +11,7 @@ public class PacketListener
     private Dictionary<TcpClient, Connection> clients = new Dictionary<TcpClient, Connection>();
     public PacketListener()
     {
-        var ipEndPoint = new IPEndPoint(IPAddress.Any, 69);
+        var ipEndPoint = new IPEndPoint(IPAddress.Any, 25525);
         listener = new TcpListener(ipEndPoint);
         listener.Start();
         Console.WriteLine($"Listener started on {ipEndPoint.Address}:{ipEndPoint.Port}");
@@ -70,7 +70,9 @@ public class PacketListener
                 int bytesRead = stream.Read(buffer, 0, buffer.Length);
                 if (bytesRead > 0)
                 {
-                    Console.WriteLine($"Read {bytesRead} bytes");
+                    // Console.WriteLine($"Read {bytesRead} bytes");
+                    // Console.WriteLine(String.Join(",", buffer));
+                    connection.processBytes(buffer);
                 }
             }
         }

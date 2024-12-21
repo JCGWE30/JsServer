@@ -31,7 +31,7 @@ public class PacketListener
         {
             TcpClient client = listener.AcceptTcpClient();
             Console.WriteLine("Client connected");
-            clients[client] = new Connection();
+            clients[client] = new Connection(client);
         }
     }
 

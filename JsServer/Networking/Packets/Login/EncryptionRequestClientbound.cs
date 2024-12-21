@@ -2,13 +2,31 @@
 
 public class EncryptionRequestClientbound : Packet
 {
-    public EncryptionRequestClientbound(PacketStream stream) : base(null)
-    {
-        
-    }
+    private String serverId;
+    private byte[] publicKey;
+    private byte[] verificationBytes;
 
+    public EncryptionRequestClientbound(String serverId, byte[] publicKey)
+    {
+        this.serverId = serverId;
+        this.publicKey = publicKey;
+        verificationBytes = new byte[4];
+        new Random().NextBytes(verificationBytes);
+    }
     public override void process(Connection connection)
     {
-        throw new NotImplementedException();
+        throw new OperationCanceledException("Attempted to process a clientbound packet");
+    }
+
+    public override byte[] convert()
+    {
+        PacketOutputStream stream = new PacketOutputStream();
+        stream.WriteString(serverId);
+        stream.WriteVarInt(publicKey.Length);
+        stream.WriteBytes(publicKey);
+        stream.WriteVarInt(verificationBytes.Length);
+        stream.WriteBytes(verificationBytes);
+        stream.WriteBoolean(true);
+        return stream.ToArray(0x01);
     }
 }

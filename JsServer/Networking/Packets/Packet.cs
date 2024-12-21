@@ -2,13 +2,9 @@
 
 public abstract class Packet
 {
-    private PacketStream _stream;
-    public Packet(PacketStream stream)
-    {
-        this._stream = stream;
-    }
-    
     public abstract void process(Connection connection);
+    
+    public abstract byte[] convert();
     
     public static Packet CreatePacket(byte[] data,int state,bool isOutgoing = false)
     {

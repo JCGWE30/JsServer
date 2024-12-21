@@ -1,4 +1,6 @@
-﻿using JsServer.Packets;
+﻿using System.Net.Sockets;
+using JsServer.Packets;
+using JsServer.Packets.Login;
 
 namespace JsServer;
 
@@ -10,9 +12,11 @@ public class Connection
     public int state;
     
     private long lastActivity;
+    private TcpClient client;
     
-    public Connection()
+    public Connection(TcpClient client)
     {
+        this.client = client;
         state = 1;
         lastActivity = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
     }
@@ -32,5 +36,12 @@ public class Connection
     public void terminate()
     {
         //Nuffin for now
+    }
+
+    public void SendPacket(Packet packet)
+    {
+        byte[] goingBytes = packet.convert();
+        Console.WriteLine(String.Join(" ", goingBytes));
+        client.GetStream().Write(goingBytes, 0, goingBytes.Length);
     }
 }

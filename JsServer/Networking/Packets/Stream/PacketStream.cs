@@ -61,4 +61,11 @@ public class PacketStream : ByteStream
         value |= Next();
         return value;
     }
+
+    public byte[] ReadBytes(int length)
+    {
+        byte[] bytes = new byte[length];
+        for(int i = 0; i < length; i++) bytes[i] = Next();
+        return bytes;
+    }
 }

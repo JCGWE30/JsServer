@@ -7,7 +7,7 @@ public class HandshakeServerbound : Packet
     private ushort serverPort;
     private int nextState;
     
-    public HandshakeServerbound(PacketStream stream) : base(stream)
+    public HandshakeServerbound(PacketStream stream)
     {
         protocolVersion = stream.ReadVarInt();
         serverAddress = stream.ReadString();
@@ -23,5 +23,10 @@ public class HandshakeServerbound : Packet
             return;
         }
         connection.state = nextState;
+    }
+
+    public override byte[] convert()
+    {
+        throw new InvalidOperationException("Attempted to seralize a serverbound packet");
     }
 }

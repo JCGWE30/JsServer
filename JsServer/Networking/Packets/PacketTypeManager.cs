@@ -16,7 +16,8 @@ public class PacketTypeManager
         { 0b00_01_0000, typeof(HandshakeServerbound) },
         { 0b00_10_0000, typeof(LoginStartServerbound) },
         { 0b00_10_0001, typeof(EncryptionResponseServerbound) },
-        { 0b01_10_0000, typeof(EncryptionRequestClientbound) }
+        { 0b01_10_0001, typeof(EncryptionRequestClientbound) },
+        { 0b01_10_0010, typeof(LoginSuccessClientbound) }
     };
 
     public static Type Get(int type,int state,bool outgoing)

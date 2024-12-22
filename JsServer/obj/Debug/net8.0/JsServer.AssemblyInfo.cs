@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JsServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79297fd1b329849c0717a26702ea0aca3543ce4d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52dba74ee23127602f05b135a8d308d910ace9aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("JsServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JsServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

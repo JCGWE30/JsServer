@@ -13,9 +13,13 @@ public class LoginStartServerbound : Packet
 
     public override void process(Connection connection)
     {
-        Console.WriteLine($"Logging in as {name} [{uuid.ToString()}]");
+        byte[] verifyBytes = new byte[8];
+        new Random().NextBytes(verifyBytes);
         EncryptionRequestClientbound encryptionPacket =
-            new EncryptionRequestClientbound("                    ", MinecraftServer.publicKey);
+            new EncryptionRequestClientbound(" ", MinecraftServer.publicKey,verifyBytes);
+        connection.name = name;
+        connection.guid = uuid;
+        connection.verifyBytes = verifyBytes;
         connection.SendPacket(encryptionPacket);
     }
     

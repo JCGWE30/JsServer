@@ -92,4 +92,10 @@ public class PacketOutputStream
         _queue.Enqueue(bol ? (byte)1 : (byte)0);
         return this;
     }
+
+    public PacketOutputStream WriteUUID(Guid uid)
+    {
+        WriteBytes(uid.ToByteArray());
+        return this;
+    }
 }

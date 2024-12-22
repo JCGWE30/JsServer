@@ -6,12 +6,11 @@ public class EncryptionRequestClientbound : Packet
     private byte[] publicKey;
     private byte[] verificationBytes;
 
-    public EncryptionRequestClientbound(String serverId, byte[] publicKey)
+    public EncryptionRequestClientbound(String serverId, byte[] publicKey,byte[] verificationBytes)
     {
         this.serverId = serverId;
         this.publicKey = publicKey;
-        verificationBytes = new byte[4];
-        new Random().NextBytes(verificationBytes);
+        this.verificationBytes = verificationBytes;
     }
     public override void process(Connection connection)
     {

@@ -1,4 +1,5 @@
 ﻿using System.Net.Sockets;
+using System.Security.Cryptography;
 using JsServer.Packets;
 using JsServer.Packets.Login;
 
@@ -13,6 +14,11 @@ public class Connection
     
     private long lastActivity;
     private TcpClient client;
+
+    public byte[] verifyBytes;
+    public String name;
+    public Guid guid;
+    public Aes? aes;
     
     public Connection(TcpClient client)
     {
@@ -41,6 +47,20 @@ public class Connection
     public void SendPacket(Packet packet)
     {
         byte[] goingBytes = packet.convert();
+        if (aes != null)
+        {
+            using (var encryptor = aes.CreateEncryptor(aes.Key, aes.IV))
+            {
+                using (var ms = new MemoryStream())
+                using (var cryptoStream = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
+                {
+                    cryptoStream.Write(goingBytes, 0, goingBytes.Length);
+                    cryptoStream.FlushFinalBlock();
+
+                    goingBytes = ms.ToArray();
+                }
+            }
+        }
         Console.WriteLine(String.Join(" ", goingBytes));
         client.GetStream().Write(goingBytes, 0, goingBytes.Length);
     }

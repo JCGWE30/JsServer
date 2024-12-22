@@ -70,7 +70,7 @@ public class PacketListener
                 int bytesRead = stream.Read(buffer, 0, buffer.Length);
                 if (bytesRead > 0)
                 {
-                    // Console.WriteLine($"Read {bytesRead} bytes");
+                    Console.WriteLine($"Read {bytesRead} bytes");
                     // Console.WriteLine(String.Join(",", buffer));
                     connection.processBytes(buffer);
                 }
